@@ -1,8 +1,10 @@
 // 위키식 인라인 편집기. 전체 문서 편집 / 섹션 편집 두 가지.
 // 편집 대상은 렌더된 DOM이 아니라 파일의 원본 HTML 소스다 — 들여쓰기와 주석이 그대로 보존된다.
-// 저장은 serve.py의 PUT으로 파일에 직접 쓴다. file://로 열면 저장할 방법이 없으므로 편집 UI를 띄우지 않는다.
+// 저장은 serve.py의 PUT으로 파일에 직접 쓴다. 받아줄 서버가 없으면 편집 UI를 아예 띄우지 않는다 —
+// file://이 그렇고, GitHub Pages 같은 정적 호스팅도 그렇다. 버튼이 눌리는데 저장만 실패하는 것이
+// 버튼이 없는 것보다 나쁘다(다 쓰고 나서야 알게 된다).
 (function () {
-  if (location.protocol === 'file:') return;
+  if (location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') return;
 
   var url = location.pathname;
   var src = '', bodyStart = 0, bodyEnd = 0;
