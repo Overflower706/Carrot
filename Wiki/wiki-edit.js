@@ -4,7 +4,19 @@
 // file://이 그렇고, GitHub Pages 같은 정적 호스팅도 그렇다. 버튼이 눌리는데 저장만 실패하는 것이
 // 버튼이 없는 것보다 나쁘다(다 쓰고 나서야 알게 된다).
 (function () {
-  if (location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') return;
+  if (location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') {
+    // 정적 호스팅(Pages 등)에서만 알린다. file://은 hostname이 ''고, 혼자 열어본 것이라 알릴 것이 없다.
+    if (location.protocol.indexOf('http') !== 0) return;
+    document.addEventListener('DOMContentLoaded', function () {
+      var b = document.createElement('div');
+      b.textContent = '읽기 전용';
+      b.title = '저장을 받아줄 서버가 없다. 고치려면 로컬에서 wiki.cmd를 실행하거나 github.dev로 연다.';
+      b.style.cssText = 'position:fixed;top:10px;right:10px;z-index:99;padding:3px 10px;border-radius:99px;' +
+        'font:600 0.72rem/1.5 inherit;color:var(--muted);background:var(--panel);border:1px solid var(--line);';
+      document.body.appendChild(b);
+    });
+    return;
+  }
 
   var url = location.pathname;
   var src = '', bodyStart = 0, bodyEnd = 0;
