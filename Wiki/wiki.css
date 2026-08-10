@@ -1,0 +1,61 @@
+:root{
+  --bg:#0f1216; --panel:#171b21; --text:#e6e9ee; --muted:#93a0b3;
+  --accent:#7cc6ff; --accent2:#ffb86b; --line:#2a303a; --code:#1d232b;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f7f8fa; --panel:#ffffff; --text:#1b2129; --muted:#5b6472;
+    --accent:#1c6fd6; --accent2:#b4650a; --line:#e2e5ea; --code:#f0f2f5; }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1216; --panel:#171b21; --text:#e6e9ee; --muted:#93a0b3;
+  --accent:#7cc6ff; --accent2:#ffb86b; --line:#2a303a; --code:#1d232b;
+}
+:root[data-theme="light"]{
+  --bg:#f7f8fa; --panel:#ffffff; --text:#1b2129; --muted:#5b6472;
+  --accent:#1c6fd6; --accent2:#b4650a; --line:#e2e5ea; --code:#f0f2f5;
+}
+body{ background:var(--bg); color:var(--text); font-family:-apple-system,"Segoe UI",Pretendard,sans-serif;
+  line-height:1.6; max-width:920px; margin:0 auto; padding:40px 24px 80px; }
+h1{ font-size:1.7rem; border-bottom:2px solid var(--accent); padding-bottom:12px; margin-bottom:6px;}
+.sub{ color:var(--muted); margin-bottom:32px; font-size:0.95rem;}
+h2{ font-size:1.25rem; margin-top:44px; color:var(--accent); }
+h3{ font-size:1.02rem; margin-top:22px; color:var(--text);}
+p, li{ font-size:0.95rem; }
+.card{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 22px; margin:14px 0;}
+code, .code{ background:var(--code); border-radius:4px; padding:1px 6px; font-family:"SF Mono",Consolas,monospace; font-size:0.88em;}
+table{ border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9rem;}
+th,td{ border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top;}
+th{ background:var(--code); color:var(--muted); font-weight:600;}
+ul,ol{ padding-left:20px;} li{ margin:4px 0;}
+footer{ margin-top:60px; color:var(--muted); font-size:0.8rem; border-top:1px solid var(--line); padding-top:16px;}
+.backlink{ display:inline-block; margin-bottom:20px; color:var(--muted); text-decoration:none; font-size:0.88rem;}
+.backlink:hover{ color:var(--accent); }
+
+/* wiki-edit.js 전용 (인라인 편집기) */
+dialog.wiki-editor menu button{ background:var(--panel); color:var(--text);
+  border:1px solid var(--line); border-radius:6px; padding:6px 12px; font-size:0.85rem;
+  font-family:inherit; cursor:pointer; }
+dialog.wiki-editor menu button:hover{ border-color:var(--accent); color:var(--accent); }
+h1 > .wiki-editsec{ float:right; margin-top:0.35em; }
+.wiki-editsec{ margin-left:8px; vertical-align:middle; background:none; border:none; padding:0;
+  color:var(--muted); font-family:inherit; font-size:0.72rem; cursor:pointer; opacity:.55; transition:opacity .12s; }
+h1:hover > .wiki-editsec, h2:hover > .wiki-editsec, h3:hover > .wiki-editsec,
+.wiki-editsec:hover, .wiki-editsec:focus{ opacity:1; color:var(--accent); }
+dialog.wiki-editor{ width:min(1100px,92vw); height:88vh; padding:0; background:var(--panel); color:var(--text);
+  border:1px solid var(--line); border-radius:10px; }
+dialog.wiki-editor::backdrop{ background:rgba(0,0,0,.55); }
+dialog.wiki-editor form{ display:flex; flex-direction:column; height:100%; padding:16px 18px; box-sizing:border-box; }
+dialog.wiki-editor h3{ margin:0 0 10px; font-size:0.95rem; color:var(--accent); }
+dialog.wiki-editor textarea{ flex:1; width:100%; box-sizing:border-box; resize:none; padding:12px;
+  background:var(--code); color:var(--text); border:1px solid var(--line); border-radius:6px;
+  font-family:"SF Mono",Consolas,monospace; font-size:0.82rem; line-height:1.5; tab-size:2; white-space:pre; }
+dialog.wiki-editor menu{ display:flex; gap:8px; justify-content:flex-end; margin:12px 0 0; padding:0; }
+dialog.wiki-editor menu button.primary{ border-color:var(--accent); color:var(--accent); }
+
+/* index.html 전용 (문서 목록 카드) */
+a.card{ display:block; background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  padding:16px 20px; margin:14px 0; text-decoration:none; color:var(--text); }
+a.card:hover{ border-color:var(--accent); }
+a.card .title{ font-weight:600; font-size:1.02rem; }
+a.card .title::before{ content:"» "; color:var(--accent); }
+a.card .desc{ color:var(--muted); font-size:0.9rem; margin-top:6px; }
