@@ -19,6 +19,18 @@
   `file://`로 열면 편집 버튼이 뜨지 않는다(브라우저가 파일에 쓸 방법이 없어서).
 - 문서를 새로 만들면 `wiki.css` + `wiki-edit.js`를 걸고 `index.html`에 카드를 추가한다.
 
+### 공개 Pages — 한시적
+
+<https://overflower706.github.io/labs-wiki/> (repo `Overflower706/labs-wiki`, **public**).
+`main`에 push하면 1~2분 뒤 반영된다.
+
+- **이 저장소는 공개다.** `.gitignore`가 허용 목록 방식인 이유가 그것이다 —
+  옆의 `CarrotLabs`에는 구매 에셋이 728MB 있고, 한 번 딸려가면 되돌릴 수 없다.
+  **`git add -f`를 쓰지 말 것.** 올릴 것이 생기면 `.gitignore`에 한 줄을 더한다.
+- `Wiki/index.html`의 `../CarrotLabs/...` 링크는 **웹에서 404다.** 로컬 전용이고, 그래야 맞다.
+- **분리 계획이 끝나면 이 Pages는 내린다.** 목적이 「계획이 굴러가는 동안 폰에서 읽는 것」뿐이라
+  끝난 뒤에도 공개로 두면 이유 없이 노출만 남는다.
+
 **이 위키가 다루는 것은 「옆에 새 프로젝트를 세우는 일」뿐이다.**
 CarrotLabs 내부의 기획·구현 문서는 그 프로젝트 자신의 `Wiki/`가 소유한다. 여기로 옮겨오지 않는다.
 
