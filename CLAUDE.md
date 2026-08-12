@@ -45,6 +45,12 @@
 `CarrotLabs/` 안에는 **`CLAUDE.md`도 html 문서도 만들지 않는다.**
 클로드 작업은 항상 `Carrot/`을 루트로 잡는다. 공개할 때 정돈된 것만 나가게 하기 위해서다.
 
+## 커밋
+
+**커밋 메시지에 `Claude-Session:` 트레일러를 붙이지 않는다.** 세 저장소 전부 해당한다.
+루트가 공개라 세션 URL이 히스토리에 그대로 박히고, 나중에 지우려면 히스토리를 다시 써야 한다.
+(2026-08-13에 `Carrot` 6커밋 · `CarrotProject` 39커밋에서 걷어냈다.)
+
 ### 공개 Pages — 한시적
 
 <https://overflower706.github.io/Carrot/> (repo `Overflower706/Carrot`, **public**).
