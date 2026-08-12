@@ -2,65 +2,96 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Labs 문서</title>
+<title>Carrot</title>
 <link rel="stylesheet" href="wiki.css">
 <script src="wiki-edit.js" defer></script>
-<style>
-  h2{ font-size:1.15rem; margin:36px 0 4px; color:var(--accent2); }
-</style>
 </head>
 <body>
 
-<h1>Labs 문서</h1>
-<div class="sub">작업 루트(<code>C:\Projects\Labs\</code>) 전체를 보는 자리. 각 카드를 클릭해 해당 html로 이동.</div>
+<h1>Carrot</h1>
+<div class="sub">액션 RTS <b>&lt;캐롯 프로젝트&gt;</b> 출시를 목표로 한 시즌 프로젝트<br>
+이 위키는 프로젝트 <b>전반의 흐름</b>을 바깥에서 관리한다. Labs를 제외한 각 프로젝트 내부 문서는 그 프로젝트 자신의 위키가 소유한다.</div>
 
-<p>
-<code>Labs</code>는 <b>프로젝트 하나가 아니라 프로젝트들이 서는 자리</b>다.
-지금 여기에는 원본 <b>CarrotLabs</b>(비공개, 액션 RTS 진행 중)가 있고,
-그 옆에 <b>조작감 비교용 공개 기반 저장소</b>를 새로 세우는 중이다.
-이 위키는 <b>그 「옆에 세우는 일」</b>을 다룬다 &mdash;
-CarrotLabs 내부의 기획·구현 문서는 <b>그 프로젝트 자신의 위키</b>에 있다.
-</p>
+<h2>세 가지 <span class="tag t-ok">사람이 검토함</span></h2>
 
-<h2>진행 중인 계획</h2>
+<table>
+<tr><th>작업 이름</th><th>위치</th><th>공개</th><th>무엇</th></tr>
+<tr><td><b>Carrot Project</b></td><td><code>CarrotProject/</code></td><td>비공개</td>
+    <td>액션 RTS. 스팀 출시 목표</td></tr>
+<tr><td><b>Control Labs</b></td><td><code>CarrotProject/</code> 안의 씬 하나</td><td>빌드만 배포</td>
+    <td>3가지 조작으로 아군 NPC와 함께 적군 NPC를 무찌르는 게임 규칙<br>3가지 조작의 조작감 참고용</td></tr>
+<tr><td><b>Carrot Labs</b></td><td><code>CarrotLabs/</code></td><td>저장소까지 공개</td>
+    <td>상기 두 작업의 일반화 된 형태</td></tr>
+</table>
+
+<p>Labs 둘 다 목적은 <b>인디 게임 개발 씬에 기여하는 것</b>이다.
+Control Labs는 저장소가 비공개라 유료 에셋을 그대로 쓰고, Carrot Labs는 공개라 대거 들어낸다.</p>
+
+<h2>폴더 구조 <span class="tag t-review">사람이 검토 필요</span></h2>
+
+<pre><code>Carrot/                  이 위키의 루트.  저장소 Overflower706/Carrot  (공개)
+├─ Wiki/                 지금 읽고 있는 문서들
+├─ CarrotProject/        저장소 Overflower706/CarrotProject  (비공개)
+│                        └ Control Labs는 이 안의 씬 하나다
+└─ CarrotLabs/           저장소 Overflower706/CarrotLabs  (비공개 → 공개 예정)</code></pre>
+
+<p><b>세 폴더는 각자 별개의 git 저장소다.</b> 하위 둘은 루트 저장소에 올라가지 않는다 &mdash;
+루트 <code>.gitignore</code>가 허용 목록 방식이라 <code>Wiki/</code>와 <code>CLAUDE.md</code> 외에는 전부 무시한다.
+루트가 공개인데 <code>CarrotProject</code>의 구매 에셋이 한 번 딸려가면 되돌릴 수 없기 때문이다.</p>
+
+<h2>계획 <span class="tag t-ok">사람이 검토함</span></h2>
+
+<h3>0. Carrot Project의 개발은 계속한다.</h3>
+
+<h3>1. Control Labs — 빌드 공개 및 공유</h3>
+
+<h3>2. Carrot Labs — 저장소 공유</h3>
+
+<h3>3. Carrot Project — 게임 출시</h3>
+
+<h2>진행 중인 작업 <span class="tag t-ok">사람이 검토함</span></h2>
 
 <a class="card" href="Plan.html">
-  <div class="title">조작감 비교 기반 프로젝트 분리 계획 <b>(0단계 대기)</b></div>
+  <div class="title">조작감 비교 기반 프로젝트 분리 계획 <b>(1단계 진행 중)</b></div>
   <div class="desc">롤식·엘리스식·세피리아식 셋을 한자리에서 비교하는 웹 빌드를 내고, 그 기반을 공개한다.
     히스토리 세탁이 아니라 <b>새 저장소에 필요한 것만 옮긴다</b>(스크립트 약 25개 + 씬 2개).
-    <b>0단계 = 저장소 이름이 아직 미정</b>이라 여기서 멈춰 있다.</div>
+    0단계 완료 &mdash; 공개 기반은 <code>CarrotLabs</code>, 기존 비공개는 <code>CarrotProject</code>로 개명.</div>
 </a>
 
-<h2>원본 프로젝트</h2>
+<h2>Carrot Labs의 고정 포맷 <span class="tag t-ok">사람이 검토함</span></h2>
 
-<p>아래는 <b>CarrotLabs 자신의 문서</b>다. 이 위키가 소유하지 않는다 &mdash; 여기서는 입구만 건다.
-분리 작업은 <b>원본을 건드리지 않는다.</b></p>
+<p><b>2D 사이드뷰 + 육각형 타일 오토배틀러 + 플레이어 캐릭터 + 3가지 조작법 + 당신의 규칙.</b><br>
+하나부터 열까지 고칠 수 있는 자유도는 엔진을 만드는 것과 다르지 않기에 고정할 것은 고정함.<br>
+구체적인 각 항목의 정의는 별도로 문단에서 다룹니다.</p>
 
-<a class="card" href="../CarrotLabs/Wiki/index.html">
-  <div class="title">Carrot Labs 문서 &mdash; 전체 목록</div>
-  <div class="desc">'이세계 공대장 미나(가칭)' 기획 연구. 공통 기획 / 공통 규칙 / 개별 조작법 / 개별 규칙 4분류.</div>
+<a class="card" href="Controls.html">
+  <div class="title">3가지 조작법</div>
+  <div class="desc">롤식 · 엘리스식 · 세피리아식. 무엇을 고정하고 무엇을 비교하는가.</div>
 </a>
 
-<a class="card" href="../CarrotLabs/Wiki/Plan.html">
-  <div class="title">액션 RTS 2단계 &mdash; 원본이 지금 하고 있는 일</div>
-  <div class="desc">분리 계획과 <b>동시에 굴러간다.</b> 원본은 멈추지 않는다.</div>
+<a class="card" href="PlayerCharacter.html">
+  <div class="title">플레이어 캐릭터</div>
+  <div class="desc">오토배틀러 판 위에 사람이 직접 끼워 넣는 한 명.</div>
 </a>
 
-<a class="card" href="../CarrotLabs/Wiki/DevLog08.html">
-  <div class="title">개발 일지 &mdash; 2026년 8월</div>
-  <div class="desc">「무엇을 했는가」. 「무엇을 왜 그 순서로 할 것인가」는 각 Plan 문서가 맡는다.</div>
+<a class="card" href="Npc.html">
+  <div class="title">NPC</div>
+  <div class="desc">아군과 적군. 사람이 만지지 않아도 알아서 싸우는 쪽.</div>
 </a>
 
-<h2>공개 전에 답이 필요한 것</h2>
+<a class="card" href="Tile.html">
+  <div class="title">육각 타일</div>
+  <div class="desc">사이드뷰에서 XY 평면에 서는 판. 이동과 전투가 전부 이 위에서 일어난다.</div>
+</a>
+
+<h2>답이 필요한 것 <span class="tag t-review">사람이 검토 필요</span></h2>
 
 <ul>
-  <li><b>저장소 이름</b> &mdash; 후보 <code>ControlFeelLab</code> · <code>SchemeLab</code> · <code>control-feel-lab</code>.
-    정해지기 전에는 만들지 않는다.</li>
   <li><b>엘리스식 · 세피리아식 조작 규칙의 확정 범위</b> &mdash;
-    원본 <a href="../CarrotLabs/Wiki/KeyboardMoveKeyboardSkill_Plan.html">엘리스식</a> ·
-    <a href="../CarrotLabs/Wiki/KeyboardMoveMouseAttack_Plan.html">세피리아식</a> 기획서에서 확인할 것.
-    미확정이면 <b>임의로 정하지 말고 물어본다.</b></li>
+    기획서는 <code>CarrotProject</code> 자신의 위키에 있다. 미확정이면 <b>임의로 정하지 말고 물어본다.</b></li>
 </ul>
+
+<h2>에이전트 기록</h2>
 
 <footer>
 <b>웹(GitHub Pages)에서는 읽기 전용이다</b> &mdash; 저장을 받아줄 서버가 없어서 편집 버튼이 뜨지 않는다.
