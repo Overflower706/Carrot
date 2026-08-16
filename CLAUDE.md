@@ -31,8 +31,8 @@
 **섹션마다 검토 태그를 단다.** `h2`(필요하면 `h3`) 제목 끝에 한 줄:
 
 ```html
-<span class="tag t-review">사람이 검토 필요</span>   <!-- 클로드가 쓴 그대로 -->
-<span class="tag t-ok">사람이 검토함</span>          <!-- 사용자가 읽고 승인함 -->
+<span class="tag t-review">사람이 문장 검토 필요함</span>   <!-- 클로드가 쓴 그대로 -->
+<span class="tag t-ok">사람이 문장 검토함</span>          <!-- 사용자가 읽고 승인함 -->
 ```
 
 클로드가 문단을 새로 쓰거나 고치면 그 섹션은 **다시 `t-review`로 돌린다.**

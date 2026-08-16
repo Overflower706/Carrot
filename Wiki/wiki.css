@@ -60,8 +60,20 @@ pre code{ background:none; padding:0; }
 .tag{ display:inline-block; font-size:0.72rem; font-weight:700; padding:2px 8px; border-radius:99px;
   border:1px solid currentColor; margin-left:8px; vertical-align:middle;}
 .t-now{ color:#6fcf97;} .t-next{ color:var(--accent2);} .t-later{ color:var(--muted);} .t-block{ color:#ff7b72;}
-.t-review{ color:var(--accent2);}   /* 사람이 검토 필요 — 클로드가 쓴 그대로 */
-.t-ok{ color:#6fcf97;}              /* 사람이 검토함 */
+.t-review{ color:var(--accent2);}   /* 사람이 문장 검토 필요함 — 클로드가 쓴 그대로 */
+.t-ok{ color:#6fcf97;}              /* 사람이 문장 검토함 */
+/* 글자는 class가 정한다 — 빈 span만 쓰면 된다. class를 바꾸면 글자도 따라 바뀐다 */
+.t-review:empty::after{ content:"사람이 문장 검토 필요함";}
+.t-ok:empty::after{ content:"사람이 문장 검토함";}
+
+/* 기획 상태 태그 — 문구도 class가 정한다. 표준이면 빈 span,
+   「일부 미정」처럼 덧붙일 말이 있으면 그때만 글자를 적는다 */
+.status{ display:inline-block; font-size:0.75rem; font-weight:700; padding:2px 8px; border-radius:99px;
+  border:1px solid currentColor; margin-left:8px; vertical-align:middle;}
+.s-fixed{ color:#6fcf97;} .s-open{ color:var(--accent2);} .s-none{ color:var(--muted);}
+.s-fixed:empty::after{ content:"확정";}
+.s-open:empty::after{ content:"미정";}
+.s-none:empty::after{ content:"해당 없음";}
 
 /* index.html 전용 (문서 목록 카드) */
 a.card{ display:block; background:var(--panel); border:1px solid var(--line); border-radius:10px;
