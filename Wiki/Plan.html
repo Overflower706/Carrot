@@ -66,7 +66,7 @@ HEAD에서 지워도 공개하는 순간 과거 커밋으로 전부 받아진다
 옮길 양이 세탁 비용보다 명백히 작다. 그래서 <b>새로 판다.</b>
 </p>
 
-<h3>웹 빌드와 소스 공개는 라이선스 기준이 다르다</h3>
+<h3>웹 빌드와 소스 공개는 라이선스 기준이 다르다 <span class="tag t-review"></span></h3>
 <ul>
 <li><b>WebGL 빌드 배포</b> &mdash; Unity Asset Store EULA는 <i>빌드된 결과물</i>에 포함하는 것을 허용한다. 원본으로 빌드해도 문제 없다.</li>
 <li><b>소스 공개</b> &mdash; 재배포 금지. 구매 에셋이 전부 빠져야 한다.</li>
@@ -78,7 +78,7 @@ HEAD에서 지워도 공개하는 순간 과거 커밋으로 전부 받아진다
 
 <h2>2. 그렇다면 무엇이 가고 무엇이 남는가 <span class="tag t-ok"></span></h2>
 
-<h3>옮길 것 &mdash; 약 25 파일</h3>
+<h3>옮길 것 &mdash; 약 25 파일 <span class="tag t-review"></span></h3>
 <pre><code>Assets/Scripts/Controls/     _Core · Lol · Elis · Sepiria 전부 (9개)
 Assets/Scripts/Rules/_Core/  RuleDefinition.cs, RuleScenePauseMenu.cs
 Assets/Scripts/GameConfig/   GameConfigUI.cs
@@ -98,7 +98,7 @@ Assets/InputSystem_Actions.inputactions
 예제 씬은 하나 넣어둘 예정.
 </p>
 
-<h3>안 옮기는 것</h3>
+<h3>안 옮기는 것 <span class="tag t-review"></span></h3>
 <ul>
 <li><b>규칙 씬 실물 3종</b>(ActionRTS · BalatroFlow · MassGame) &mdash;
   <code>Combat/</code> 30여 개 + Unity Behavior 트리 + 구매 VFX/UI에 통째로 엮여 있다.
@@ -131,7 +131,7 @@ Assets/InputSystem_Actions.inputactions
 
 <h2>4. 작업 순서 <span class="tag t-review"></span></h2>
 
-<h3>1단계 · 빈 프로젝트 + 롤식 하나 <span class="tag t-next">여기부터 시작</span></h3>
+<h3>1단계 · 빈 프로젝트 + 롤식 하나 <span class="tag t-next">여기부터 시작</span> <span class="tag t-review"></span></h3>
 <ul>
 <li>Unity 신규 프로젝트(원본과 <b>같은 에디터 버전</b>). URP 2D Renderer 세팅.</li>
 <li>manifest를 3장 5번 기준으로 채운다.</li>
@@ -141,7 +141,7 @@ Assets/InputSystem_Actions.inputactions
 </ul>
 <p><b>이 단계의 판정:</b> 구매 에셋 0인 채로 캐릭터 움직임이 제대로 되는지. 놓친 의존 확인이 목표</p>
 
-<h3>2단계 · 사이드뷰 육각 타일 + 규칙 껍데기</h3>
+<h3>2단계 · 사이드뷰 육각 타일 + 규칙 껍데기 <span class="tag t-review"></span></h3>
 <p>
 여기서부터 CarrotLabs의 고정 규칙
 </p>
@@ -167,7 +167,7 @@ Assets/InputSystem_Actions.inputactions
 「화면 좌표 → XY 평면 → 타일」로 바뀐다. 마우스 조작 셋 중 둘이 여기에 걸리므로 1단계에서 먼저 확인할 것.
 </div>
 
-<h3>3단계 · 엘리스식 · 세피리아식 구현 <span class="tag t-block">진짜 작업</span></h3>
+<h3>3단계 · 엘리스식 · 세피리아식 구현 <span class="tag t-block">진짜 작업</span> <span class="tag t-review"></span></h3>
 <p>
 현재 엘리스식은 <code>ElisMoveController.cs</code> 하나, 세피리아식은
 <code>SepiriaMoveController.cs</code> + <code>SepiriaMouseAim.cs</code>뿐이다.
@@ -181,7 +181,7 @@ Assets/InputSystem_Actions.inputactions
 미확정이면 <b>임의로 정하지 말고 물어볼 것</b>(CLAUDE.md 개발 원칙).
 </div>
 
-<h3>4단계 · 비교 씬</h3>
+<h3>4단계 · 비교 씬 <span class="tag t-review"></span></h3>
 <ul>
 <li><b>같은 타일 배치 · 같은 도형 · 같은 아군/적군 구성 · 같은 시작 위치.</b>
   <b>변수는 조작법 하나뿐</b>이어야 비교가 성립한다. 지형을 매번 다르게 뽑지 않는다.</li>
@@ -194,7 +194,7 @@ Assets/InputSystem_Actions.inputactions
 <li>화면에 현재 조작법과 키 안내를 상시 표시 &mdash; 처음 만지는 사람이 대상이다.</li>
 </ul>
 
-<h3>5단계 · WebGL 빌드 + 공개</h3>
+<h3>5단계 · WebGL 빌드 + 공개 <span class="tag t-review"></span></h3>
 <ul>
 <li>WebGL 빌드 → GitHub Pages(<code>gh-pages</code> 브랜치 또는 <code>/docs</code>).</li>
 <li>빌드 산출물은 저장소에 커밋하지 말고 Actions로 뽑거나 별도 브랜치에 둔다.</li>
